@@ -14,7 +14,7 @@ class _LoadingState extends State<Loading> {
 
     await instance.getTime();
     
-    Navigator.pop(context, {
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
@@ -34,7 +34,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: Colors.blue[900],
       body: Center(
-        child: SpinKitFadingCircle(
+        child: SpinKitFadingCube(
           color: Colors.white,
           size: 80.0,
         ),

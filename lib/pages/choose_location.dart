@@ -24,12 +24,17 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
     await instance.getTime();
 
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
+    Navigator.pop(context, {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
       'isDayTime': instance.isDayTime
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
